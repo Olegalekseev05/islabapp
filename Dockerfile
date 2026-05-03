@@ -1,10 +1,10 @@
 # build
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /IsLabApp
-COPY ["IsLabApp/IsLabApp.csproj", "IsLabApp/"]
-RUN dotnet restore "IsLabApp/IsLabApp.csproj"
+WORKDIR /src
+COPY ["IsLabApp.csproj", "./"]
+RUN dotnet restore "IsLabApp.csproj"
 COPY . .
-WORKDIR "/IsLabApp/IsLabApp"
+WORKDIR /src
 RUN dotnet build "IsLabApp.csproj" -c Release -o /app/build
 RUN dotnet publish "IsLabApp.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
