@@ -126,3 +126,7 @@ static Dictionary<string, string[]>? ValidateCreateNoteRequest(CreateNoteRequest
 record Note(Guid Id, string Title, string Text, DateTimeOffset CreatedAt);
 
 record CreateNoteRequest(string Title, string Text);
+
+public partial class Program
+{
+}
