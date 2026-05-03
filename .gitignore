@@ -1,3 +1,4 @@
 .codex
 bin/
 obj/
+deploy/backups/*.tar.gz

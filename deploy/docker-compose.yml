@@ -14,7 +14,7 @@ services:
     restart: unless-stopped
 
   app:
-    image: ghcr.io/olegalekseev05/islabapp:latest
+    image: ghcr.io/olegalekseev05/islabapp:${APP_IMAGE_TAG:-latest}
     container_name: is-app
     env_file:
       - .env
